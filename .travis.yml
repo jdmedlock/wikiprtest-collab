@@ -1,3 +1,12 @@
-env:
-  matrix:
-    secure: XjeKfM4BQEsT0OJSuQ7pNOZXk0Lv6bvyltNtG4gNgLBotqUxtJeOrPzjfgsEfQosFkwwHWzMVfJUFTR4TGrrhSUcVaxwPlCaJL+0BTsd0x7yFbQje6eh9MOJ1JNh+/2CXBBpQVKeHxynRlcAzzL1qp2zVbEm3mUYwKxRKolINy8pRFJGmihCr+y4L0l1GuUmOUAifp8/bxKvYjLGNHm6fC5WlyFC3/xK3wdtD30KAI8L83IPdEeOvfOJOZdEZtHCC56eUvTiCpCHGlJtNfrd4AP6vBztoMhkcbfa5S+2eoSpmn29kC5pnnTFj3s1TOwvP3o80dfplBMZC77znqoRNSyl+UDL5l1Q6msaKJaVjsKFiJV+y4DRvy62rdBE5RRrHg2WxvxVW0FtcOQbctgAJiQNY0a7NzkhNZ3HOJVNuFc2IFd69zqRjWFTNDatTRrGnM1blAzYjVCz22DxGJLavSFSUbJpoeL8HvSh8KHj2cVRCXjPbO4SX8QWXXGVBSemAjKx/MaIFArUFoAC9Oen+ZrsU/Ybuv9WqGeWHKUSnS5eKpohQBnkiM9ONGaBYa67EepricUdMWBu5OtdOvu/61snhGUB3Qw7mrjXIEwxiu+Eb1tOFqxgkSy2Y9VMQNnH4Cgvd9qTKrNibIVMHcd5rMM27arzmHW9PpN1u+8uLfM=
+script:
+- |
+  git config user.name "jdmedlock"
+  git config user.email "jdmedlock@gmail.com"
+  git remote remove origin
+  git remote add origin https://github.com/jdmedlock/wikiprtest-collab.git > /dev/null 2>&1
+  git remote add upstream https://github.com/jdmedlock/wikiprtest-wiki.wiki.git > /dev/null 2>&1
+  git fetch origin
+  git fetch upstream
+  git merge upstream/master --no-edit
+  git push origin HEAD:master > /dev/null 2>&1
+  git push upstream HEAD:master > /dev/null 2>&1
