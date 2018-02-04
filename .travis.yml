@@ -2,16 +2,15 @@ script:
 - git config user.name "jdmedlock"
 - git config user.email "jdmedlock@gmail.com"
 - git remote remove origin
-- git remote add origin https://927bd232b30bfa0c9ba68ce93cd3eef8a9368c8d@github.com/jdmedlock/wikiprtest-collab.git
+- git remote add origin https://$GITHUB_API_KEY@github.com/jdmedlock/wikiprtest-collab.git
   > /dev/null 2>&1
-- git remote add upstream https://927bd232b30bfa0c9ba68ce93cd3eef8a9368c8d@github.com/jdmedlock/wikiprtest-wiki.wiki.git
+- git remote add upstream https://$GITHUB_API_KEY@github.com/jdmedlock/wikiprtest-wiki.wiki.git
   > /dev/null 2>&1
 - git fetch origin
 - git fetch upstream
 - git merge upstream/master --no-edit
-- git push origin HEAD:master > /dev/null 2>&1
+- git push origin HEAD:development > /dev/null 2>&1
 - git push upstream HEAD:master > /dev/null 2>&1
 env:
   matrix:
-  - secure: HdC0cuKMPZ3c61SyxxGX/cxoVho5CKKYCyvi/2+tFc9LQ2kFAcSOXgfYqbS3HIKPR3GMvE0huZdRGcH7GokKcPvRPRJh0r38eeshcPdpnf5jeRQqmrQe5aevSkhnaNea9MsMoVEGUoNYa/qSJjRlEmd0JDlMb+CFoOK3/1CcAvAi+ZYOp00iieuHq5s0ufyWPhMD9ZmTh+NxsN8OpLJ7D3O+yanEEw7PO5rv8quKKaSTNrG02lxwT81iKIdoRbvLf1LcXrmYG5opqG8hbHAZT5GnvfGZPHN1Y+kJm+EPOWTHXaw0w5C9yrH5eQwrn4eCmWzKL+A9toAotmgKD8NwS1MRAoDb8GGuUZFg1xXEkqEuJaNu3mTpV1FeUZhzL0NqIUw/BMlIz9JDPqX64jnoIqWgE6f115HienVgxuRil/6VyIrxMWV+mXBX+hfdB0jiHxtfsUTp5BIG37f2h+MzOw2XA/fWpSHauHK07PNXYU/MsrBRNdI099CGfr6NSFGA+YvuoSXpbBb5jSpdP61OQZwxrzEt7WUO+jBjhMsj4UGk1apqjGbJvtD0IXfwDgq/poTCxmz6YAq0StiqzyLHyy4YfKHA+DYLVciz6dj2JI2JFk3g7q00ZINrAoEAugth/j1tzFUUy93p48rcFqYJR5H4PSNV8ddWx/t/U5WDXEk=
-  - secure: E+S3Q6aS8Y0sl87jRaGYK9iZqQRhmD3igdfbXUqX0kARSnG6JC55V3qFD0pVgxS6st/r7iLNbT6WosVkny88fADQXJobLyj+dk6/4h4Ut6UydINttLAjnmAUAHPgbVVA0cjQR2y2iaqdeS1ykUYuMUFXRIpRIaZavV1VFR31uAlLY6u395NWMSH6iJVuda6N8itPOfJaWB8WGATLikRyd+1qSFYyUW+0SI4/pa8HaPDJboHMtqxIPU1rPNnWeN2LpHYOhg0neA0mI0kWusoHcCh1y1zLrEDw4wWG2nn1HPGMhQWjXNjhgyH2gOavUQe7LryhD1rRwSn+7riSIKYH4dhX4Swua4YjxLzn8BwzBGd7vad4CtrK+tNCLgb4BtfBsgQ8FXmj8tZLVF75o7Q2X390Q0LlOwwcK3iqX75XO5MkVNgCHalny9e/DO9fnw6Y8M/Iis5TPOdjJlffrEfwqceUQKYVaotpRFO9cOkErTmJT6Tepc4e4IW9s7MEkJ3qvhAJyS+9P4QuFvgRd9MDESM8dolyln0B4xYJPEP9mnPWJeSQzefTvJZNJ8n0GATjNCOzV2iZv7ZZa3x0sR2w3NksZ/pK1terZ1JXeSmUXWq1ADM8VJT+RyGpgtAQ/zp57m1eEqO/JZwTuV0N9PH9yZn3ktcIA/5IVS9M4ep9Op4=
+    secure: JHC8dLafYgrpVsDomi66t+rNMSdgHwXaou9B+hzMaRkqv+Y2oBt3v0qAq3pFHpksuS0ReUhYFPXV0vAaPIgI6tp5P7g8jc4kT1UsMy0EwiCoJ1RC3eRzTrKzH/W7+pID+YsVVGxkpfTGliJNmTaDLj4nRLvnEBgiy30s5Nk4RsxNr7DaXDu/PTSnH5W7odAsW5DcorV/SyvOz3N2HQ1Gtr6udgfvVmPmfvDVpB4oQ0VSvcn/2CEGhT2rKfLtqqPNeHxrzq+tMqqddK6vcS0mQRhQo9GtxCO4iCOCW7LbrA5VAYKTBxw+fEcCHkhl16zr88XLzxyQ8vvDutszMlxSlaRMO3gxEqsCMf8E40myBJJEGkkGe27qstf9tvz83ZiIJR04s0ImvI3l5xFnIy5lvVRUmXcR3P7djn2raTN0W4EWOMrvqAmaAVtHJMpTln5ClwcnkrQ1+6tbFVSLmwtj1EJD5L8ZszRO5DmtDPEG96e7VtcAWuJN/HlFXjF62MIHB11drxNXl1wnoG3JMqphqx7eMeil8YdOlnWUeq177e9bjD3AUbWRbS9MjKsphGLQfcOiwd04/N54Uesa7Hrz52HQeCOlliGyn1vC7sZexVLedUMFj0ISsyElz/UtcPBu+Fi8fj7Rq2vUPJ7Qicwr/B572oTniY/QvMjirKuCU7I=
