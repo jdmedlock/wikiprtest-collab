@@ -1,5 +1,4 @@
 script:
-- |-
   git config user.name "jdmedlock"
   git config user.email "jdmedlock@gmail.com"
   git remote remove origin
