@@ -6,10 +6,10 @@ script:
   > /dev/null 2>&1
 - git remote add upstream https://$GITHUB_API_KEY@github.com/jdmedlock/wikiprtest-wiki.wiki.git
   > /dev/null 2>&1
-- git fetch origin
+- git fetch origin development
 - git fetch upstream
 - git merge upstream/master --no-edit
-- git push origin HEAD:development > /dev/null 2>&1
+- git push origin HEAD:master > /dev/null 2>&1
 - git push upstream HEAD:master > /dev/null 2>&1
 env:
   matrix:
