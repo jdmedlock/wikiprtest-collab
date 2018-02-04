@@ -1,0 +1,12 @@
+script:
+- |
+  git config user.name "jdmedlock"
+  git config user.email "jdmedlock@gmail.com"
+  git remote remove origin
+  git remote add origin https://github.com/jdmedlock/wikiprtest-collab.git > /dev/null 2>&1
+  git remote add upstream https://github.com/jdmedlock/wikiprtest-wiki.wiki.git > /dev/null 2>&1
+  git fetch origin
+  git fetch upstream
+  git merge upstream/master --no-edit
+  git push origin HEAD:master > /dev/null 2>&1
+  git push upstream HEAD:master > /dev/null 2>&1
