@@ -11,6 +11,9 @@ script:
 - git merge upstream/master --no-edit
 - git push origin HEAD:master
 - git push upstream HEAD:master
+branches:
+  only:
+  - master
 env:
   matrix:
   - secure: Z0h8DvOAxVE5fg1uEcVU/Q4SRQcwMTUlBiCo3GMkitACLOc300fFMTGRKUCORi9uD8UaFww0oZXtpmAsL3GWsnRE54AFO5GVEKky+T3/7WWWmR+a2kqlZRNTTE5L5kgArDinwpfDyI6+30P8ouSQ6COetbHSOvHxIsgylxa6DH/NGzCEX++Ryw1x42xkX9AHyVSr9oaOaE4CXUIEUD11EhK02jWwi9tZnwtkqJz306Z4Z1jzQeKgZdyiUtE1nlt5GcKPDWP2Z866cYdhK6tPdUthlrFM9MWZKeuseEBW+J36ByYrIcMw/IIQOttw9Xvu+4DmVlZFNJ0zAlBK6cM88h54JeQO8/7ZyMUrgdcKhIRiDwZ5T8m5SDt5+6z0EjbJAErXGLCAbFRU5For1DhVnTFN+3VeudYLYo7LX7LXRcTpE2qSSePmmZRxDBacVU0Bfhque8R6EtRJFOeGMJxmtI5itgN6+dWIDUIRVbhH+GHmOF5nfBQyYtm2bJEtzH5gBFBwlbVzbLjv7eMuiwKKq/xZxZ6AKF7tkyVXqDYtNYMHrw1W12w+fc6c3F4BGZPrQxPyt8oSttcuceI0e1ZQkCPymgXc654ldRcqsFC3ELWTM+ZTziNNTMdgKcUZz9JnWv8aCuOHPQe1aS12pNExZ8MtxR/auleTEqdb+A4aGFk=
